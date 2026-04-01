@@ -1,0 +1,80 @@
+<%- include('../partials/head') %>
+
+<body class="bg-gray-50">
+  <%- include('../partials/nav') %>
+
+  <main class="container mx-auto max-w-6xl px-4 py-10">
+
+    <h2 class="text-3xl text-rose-600 font-bold text-center mb-8">
+      Here are our registered homes:
+    </h2>
+
+    <div class="flex flex-wrap justify-center gap-6">
+
+      <% registeredHomes.forEach(home => { %>
+
+        <!-- CARD -->
+        <div class="bg-white rounded-xl shadow-sm hover:shadow-md transition w-full max-w-sm overflow-hidden">
+
+          <!-- IMAGE -->
+          <img src="<%= home.photoUrl %>"
+               alt="<%= home.houseName %>"
+               class="w-full h-48 object-cover">
+
+          <!-- CONTENT -->
+          <div class="p-4">
+
+            <!-- NAME -->
+            <h3 class="text-lg font-semibold text-gray-900 mb-1">
+              <%= home.houseName %>
+            </h3>
+
+            <!-- LOCATION -->
+            <p class="text-gray-700 text-sm mb-2">
+              <i class="fas fa-map-marker-alt mr-1"></i>
+              <%= home.location %>
+            </p>
+
+            <!-- PRICE + RATING -->
+            <div class="flex justify-between items-center mb-3">
+
+              <span class="text-rose-600 font-bold text-sm">
+                Rs - <%= home.price %> / Night
+              </span>
+
+              <div class="flex items-center gap-1">
+                <svg xmlns="http://www.w3.org/2000/svg"
+                     viewBox="0 0 24 24"
+                     fill="currentColor"
+                     class="w-4 h-4 text-yellow-500">
+                  <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+                </svg>
+
+                <span class="text-gray-600 text-sm">
+                  <%= home.rating %>
+                </span>
+              </div>
+
+            </div>
+
+            <!-- ACTIONS -->
+            <div class="flex gap-3">
+
+              <a href="/homes/<%= home.id %>"
+                 class="bg-gray-900 text-white text-sm px-3 py-1 rounded-lg hover:bg-gray-800 transition">
+                Details
+              </a>
+
+              <%- include('../partials/favourite', {home: home}) %>
+
+            </div>
+
+          </div>
+        </div>
+
+      <% }) %>
+
+    </div>
+  </main>
+</body>
+</html>

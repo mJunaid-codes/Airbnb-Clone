@@ -1,0 +1,50 @@
+<header
+  class="bg-teal-400 text-gray-900 p-4 shadow-sm border-b border-gray-200"
+>
+  <nav class="container mx-auto flex justify-between items-center">
+    <ul class="flex space-x-4">
+      <li>
+        <a
+          href="/"
+          class="px-4 py-2 rounded transition duration-300 font-medium <%= currentPage === 'index' ? 'bg-rose-500 text-white' : 'text-gray-700 hover:bg-rose-500 hover:text-white' %>"
+          >Airbnb</a
+        >
+      </li>
+      <li>
+        <a
+          href="/homes"
+          class="px-4 py-2 rounded transition duration-300 font-medium <%= currentPage === 'Home' ? 'bg-rose-500 text-white' : 'text-gray-700 hover:bg-rose-500 hover:text-white' %>"
+          >Homes</a
+        >
+      </li>
+      <li>
+        <a
+          href="/favourites"
+          class="px-4 py-2 rounded transition duration-300 font-medium <%= currentPage === 'favourites' ? 'bg-rose-500 text-white' : 'text-gray-700 hover:bg-rose-500 hover:text-white' %>"
+          >Favourites</a
+        >
+      </li>
+      <li>
+        <a
+          href="/bookings"
+          class="px-4 py-2 rounded transition duration-300 font-medium <%= currentPage === 'bookings' ? 'bg-rose-500 text-white' : 'text-gray-700 hover:bg-rose-500 hover:text-white' %>"
+          >Bookings</a
+        >
+      </li>
+      <li>
+        <a
+          href="/host/host-home-list"
+          class="px-4 py-2 rounded transition duration-300 font-medium <%= currentPage === 'host-homes' ? 'bg-rose-500 text-white' : 'text-gray-700 hover:bg-rose-500 hover:text-white' %>"
+          >Host Homes</a
+        >
+      </li>
+      <li>
+        <a
+          href="/host/add-home"
+          class="px-4 py-2 rounded transition duration-300 font-medium <%= currentPage === 'addHome' ? 'bg-rose-500 text-white' : 'text-gray-700 hover:bg-rose-500 hover:text-white' %>"
+          >Add Home</a
+        >
+      </li>
+    </ul>
+  </nav>
+</header>

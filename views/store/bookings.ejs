@@ -1,0 +1,48 @@
+<%- include('../partials/head') %>
+
+<body class="bg-gray-50">
+<%- include('../partials/nav') %>
+
+<main class="container mx-auto max-w-5xl py-10">
+
+  <h2 class="text-3xl font-bold text-center mb-8">
+    Your Bookings
+  </h2>
+
+  <% if (!homes || homes.length === 0) { %>
+    <p class="text-gray-500 text-center">No bookings yet</p>
+  <% } %>
+
+  <div class="flex flex-wrap justify-center gap-6">
+
+    <% homes.forEach(home => { %>
+
+      <div class="bg-white rounded-xl shadow-sm overflow-hidden w-full max-w-sm">
+
+        <img src="<%= home.photoUrl %>" class="w-full h-48 object-cover">
+
+        <div class="p-4">
+
+          <h3 class="text-lg font-semibold">
+            <%= home.houseName %>
+          </h3>
+
+          <p class="text-gray-500 text-sm">
+            <%= home.location %>
+          </p>
+
+          <p class="text-rose-500 font-bold mt-2">
+            Rs <%= home.price %> / night
+          </p>
+
+        </div>
+
+      </div>
+
+    <% }) %>
+
+  </div>
+
+</main>
+</body>
+</html>
